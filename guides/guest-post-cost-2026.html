@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap">
 <link rel="stylesheet" href="guide.css">
   <!-- Analytics (replace IDs, same as homepage) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
-  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","CLARITY_PROJECT_ID");</script>
+  <script>(function(){try{var p=new URLSearchParams(location.search);if(p.get('notrack')==='freddy'){localStorage.setItem('fon_notrack','1');}if(p.get('notrack')==='off'){localStorage.removeItem('fon_notrack');}}catch(e){}window.__FON_NOTRACK=false;try{window.__FON_NOTRACK=localStorage.getItem('fon_notrack')==='1';}catch(e){}if(window.__FON_NOTRACK){window['ga-disable-G-NVX6FNKG2Z']=true;}})();</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVX6FNKG2Z"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());if(!window.__FON_NOTRACK){gtag('config','G-NVX6FNKG2Z');}</script>
+  <script type="text/javascript">if(!window.__FON_NOTRACK){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","ymeyddonus");}</script>
 </head>
 <body>
 <nav class="gnav">
