@@ -50,22 +50,38 @@
   <!-- 1) Google Search Console verification: paste the code from the "HTML tag" method -->
   <meta name="google-site-verification" content="vgjCpZlRB9E8KpyEPsoXMbG5GgXfuciOTCFk10oMiKQ">
 
+  <!-- 0) Owner opt-out: visit ?notrack=freddy once to exclude yourself; ?notrack=off to re-enable -->
+  <script>
+    (function(){
+      try{
+        var p=new URLSearchParams(location.search);
+        if(p.get('notrack')==='freddy'){localStorage.setItem('fon_notrack','1');}
+        if(p.get('notrack')==='off'){localStorage.removeItem('fon_notrack');}
+      }catch(e){}
+      window.__FON_NOTRACK=false;
+      try{window.__FON_NOTRACK=localStorage.getItem('fon_notrack')==='1';}catch(e){}
+      if(window.__FON_NOTRACK){window['ga-disable-G-NVX6FNKG2Z']=true;}
+    })();
+  </script>
+
   <!-- 2) Google Analytics 4: replace G-NVX6FNKG2Z with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVX6FNKG2Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-NVX6FNKG2Z');
+    if(!window.__FON_NOTRACK){ gtag('config', 'G-NVX6FNKG2Z'); }
   </script>
 
   <!-- 3) Microsoft Clarity: replace ymeyddonus with your project ID -->
   <script type="text/javascript">
+    if(!window.__FON_NOTRACK){
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ymeyddonus");
+    }
   </script>
   <!-- =========================================================================== -->
 
