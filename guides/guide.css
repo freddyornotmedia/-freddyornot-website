@@ -1,0 +1,63 @@
+:root{
+  --bg:#FFFFFF;--alt:#EFF4FC;--ink:#0F1A33;--ink-2:#42506B;--muted:#74809A;
+  --line:#E2EAF7;--line-2:#CBD9F1;--blue:#2E74EB;--blue-2:#38B6FF;--deep:#1E4FD0;
+  --coral:#FF6A45;--coral-d:#F0522B;--gold:#FFC94B;--gold-d:#0E82C4;--lgold:#E6F6FF;
+  --r:18px;--shadow:0 18px 40px -22px rgba(30,79,208,.35);--shadow-s:0 2px 6px rgba(15,26,51,.06);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1224;--alt:#111a33;--ink:#EEF3FB;--ink-2:#C2CCE2;--muted:#8894B4;
+  --line:#1E2A47;--line-2:#2A3A5C;--blue:#5B9BFF;--blue-2:#79C4FF;--deep:#2E74EB;
+  --coral:#FF7B58;--coral-d:#FF6A45;--gold:#FFD36A;--gold-d:#5AC0F0;--lgold:#123049;
+  --shadow:0 18px 40px -20px rgba(0,0,0,.7);--shadow-s:0 2px 6px rgba(0,0,0,.4);
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.gwrap{max-width:760px;margin:0 auto;padding-inline:clamp(18px,5vw,28px)}
+h1,h2,h3{font-family:"Fredoka",sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+/* top bar */
+.gnav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.gnav .gwrap{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1000px}
+.gbrand{display:flex;align-items:center;gap:10px;font-family:"Fredoka",sans-serif;font-weight:700;font-size:20px;text-decoration:none}
+.gbrand svg{width:34px;height:34px}
+.gbrand .on{color:var(--coral)}
+.gback{font-family:"Fredoka",sans-serif;font-weight:500;font-size:14px;color:var(--muted);text-decoration:none}
+.gback:hover{color:var(--blue)}
+/* hero */
+.ghero{background:linear-gradient(160deg,var(--blue-2),var(--deep));color:#fff;padding-block:clamp(40px,6vw,64px)}
+.ghero .gwrap{max-width:820px}
+.gkick{font-family:"Fredoka",sans-serif;font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold)}
+.ghero h1{color:#fff;font-size:clamp(28px,5vw,46px);margin:10px 0 0}
+.ghero .gsub{color:#EDE8FF;font-size:clamp(16px,2vw,19px);margin-top:14px;max-width:60ch}
+.gmeta{margin-top:18px;font-size:13px;color:#C4D2F5}
+/* article */
+article{padding-block:clamp(34px,5vw,54px)}
+article p{margin:0 0 18px;font-size:17px;color:var(--ink-2)}
+article h2{font-size:clamp(22px,3.4vw,30px);margin:38px 0 12px}
+article h3{font-size:19px;margin:26px 0 8px}
+article ul,article ol{margin:0 0 18px;padding-left:22px;color:var(--ink-2)}
+article li{margin-bottom:9px;font-size:16.5px}
+article strong{color:var(--ink)}
+.lead{font-size:19px !important;color:var(--ink) !important}
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px}
+.tbl th,.tbl td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{background:var(--alt);font-family:"Fredoka",sans-serif;font-weight:600;font-size:13.5px}
+.tbl td:last-child,.tbl th:last-child{text-align:right}
+/* callout */
+.callout{background:var(--alt);border-left:4px solid var(--blue-2);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout b{font-family:"Fredoka",sans-serif}
+.callout.warn{border-left-color:var(--coral);background:color-mix(in srgb,var(--coral) 8%,var(--bg))}
+/* cta */
+.gcta{background:linear-gradient(150deg,var(--blue-2),var(--deep));color:#fff;border-radius:var(--r);padding:clamp(26px,4vw,40px);text-align:center;margin:36px 0}
+.gcta h3{color:#fff;font-size:clamp(22px,3vw,28px)}
+.gcta p{color:#EDE8FF;margin:10px auto 20px;max-width:46ch;font-size:16px}
+.gbtn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-family:"Fredoka",sans-serif;font-weight:600;font-size:16px;padding:13px 28px;border-radius:999px;text-decoration:none;box-shadow:0 10px 22px -10px rgba(255,106,69,.7)}
+.gbtn:hover{background:var(--coral-d)}
+.src{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);margin-top:36px;padding-top:16px}
+.src b{font-family:"Fredoka",sans-serif;color:var(--ink)}
+/* footer */
+.gfoot{background:var(--ink);color:#8ea0c4;font-family:"Fredoka",sans-serif;font-weight:400;font-size:12.5px}
+.gfoot .gwrap{max-width:1000px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-block:22px}
+.gfoot a{color:#C4D2F5;text-decoration:none}
+.gfoot a:hover{color:var(--gold)}
