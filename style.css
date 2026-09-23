@@ -60,3 +60,52 @@
 .peek-freddy{position:absolute;left:0;bottom:0;width:290px;height:auto;transform:translateX(-50%);z-index:0;pointer-events:none;filter:drop-shadow(0 14px 20px rgba(7,37,83,.10))}
 .steps .container{position:relative;z-index:1}
 @media(max-width:1250px){.peek-freddy{display:none}}
+
+/* ===== Freddy side peek sticky ===== */
+.freddy-peek{position:fixed;right:0;bottom:14%;z-index:60;transform:translateX(118%);opacity:0;pointer-events:none;transition:transform .5s cubic-bezier(.2,.85,.25,1),opacity .5s ease}
+.freddy-peek.show{transform:translateX(0);opacity:1;pointer-events:auto}
+.freddy-peek-link{display:flex;align-items:center;text-decoration:none}
+.freddy-peek-img{width:140px;height:auto;display:block;filter:drop-shadow(-8px 8px 16px rgba(7,37,83,.28));animation:freddyBob 4s ease-in-out infinite}
+.freddy-peek-bubble{background:var(--orange);color:#fff;font:600 15px "Fredoka",sans-serif;padding:11px 16px;border-radius:16px 16px 4px 16px;white-space:nowrap;box-shadow:0 10px 24px rgba(255,105,77,.4);align-self:center;margin-right:-8px;position:relative;z-index:2}
+.freddy-peek-bubble b{font-weight:700}
+.freddy-peek-close{position:absolute;top:-4px;left:-4px;z-index:3;width:24px;height:24px;border-radius:50%;border:0;background:#fff;color:var(--navy);font-size:16px;line-height:22px;text-align:center;cursor:pointer;box-shadow:0 3px 10px rgba(7,37,83,.25);opacity:0;transition:opacity .2s}
+.freddy-peek:hover .freddy-peek-close{opacity:1}
+.freddy-peek:hover .freddy-peek-img{animation-play-state:paused}
+@keyframes freddyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:900px){.freddy-peek{bottom:11%}.freddy-peek-img{width:96px}.freddy-peek-bubble{font-size:13px;padding:9px 12px;margin-right:-6px}.freddy-peek-close{opacity:1}}
+@media(max-width:400px){.freddy-peek-img{width:78px}.freddy-peek-bubble{font-size:12px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.freddy-peek-img{animation:none}}
+
+
+/* ===== Colored section rhythm + gentle waves ===== */
+.section{position:relative}
+.section.tint{background:#eef5fe}
+.section.tint::before,.section.tint::after{content:"";position:absolute;left:0;right:0;height:50px;background-repeat:no-repeat;background-size:100% 100%;pointer-events:none;z-index:1}
+.section.tint::before{top:-49px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201200%2050%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2C50%20L0%2C30%20C250%2C6%20460%2C48%20700%2C28%20C930%2C10%201060%2C44%201200%2C26%20L1200%2C50%20Z%27%20fill%3D%27%23eef5fe%27%2F%3E%3C%2Fsvg%3E")}
+.section.tint::after{bottom:-49px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201200%2050%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2C0%20L0%2C22%20C250%2C46%20460%2C6%20700%2C24%20C930%2C42%201060%2C8%201200%2C26%20L1200%2C0%20Z%27%20fill%3D%27%23eef5fe%27%2F%3E%3C%2Fsvg%3E")}
+/* report already has a light inner card; keep its tint subtle */
+
+/* ===== Decorative Freddy peeks ===== */
+.section-peek{position:absolute;z-index:1;pointer-events:none;filter:drop-shadow(0 10px 16px rgba(7,37,83,.16))}
+.peek-left{left:0;bottom:26px;width:132px;transform:translateX(-32%)}
+.peek-right{right:0;top:64px;width:132px;transform:translateX(30%)}
+.peek-behind{left:50%;bottom:0;width:168px;transform:translateX(-50%);z-index:0;filter:drop-shadow(0 -6px 14px rgba(7,37,83,.14))}
+#services .container{position:relative;z-index:2}
+@media(max-width:900px){.section-peek{display:none}}
+
+/* ===== Mobile hero: keep Freddy clear of the trust pills ===== */
+@media(max-width:900px){
+  .hero-copy{padding:64px 0 0}
+  .trust-pills{margin-top:20px}
+  .hero-art-wrap{height:auto;padding-top:28px;padding-bottom:0}
+  .hero-art{width:min(520px,94%);max-width:94%;margin:0 auto;transform:none}
+}
+@media(max-width:620px){
+  .hero-art-wrap{padding-top:22px}
+  .hero-art{width:min(460px,100%);max-width:100%;margin-top:0;transform:none}
+}
+
+/* peek position refinements */
+#niches .container{position:relative;z-index:2}
+.peek-left{left:0;bottom:0;width:126px;transform:translateX(-30%)}
+@media(min-width:1500px){.peek-left{transform:translateX(6%)}}
